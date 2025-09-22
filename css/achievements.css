@@ -1,0 +1,442 @@
+* {    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Removed mouse tail effect styles */
+
+/* Back Button */
+.back-button {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #2696d5, #5b2ac6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(38, 150, 213, 0.4);
+    animation: backButtonGlow 2s ease-in-out infinite alternate;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(38, 150, 213, 0.8);
+}
+
+.back-button i {
+    color: white;
+    font-size: 24px;
+}
+
+@keyframes backButtonGlow {
+    0% { box-shadow: 0 0 20px rgba(38, 150, 213, 0.4); }
+    100% { box-shadow: 0 0 40px rgba(38, 150, 213, 0.8); }
+}
+
+/* Main Title */
+.main-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #2696d5, #5b2ac6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 120px 0 80px 0;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Experience Container */
+.experience-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Enhanced connecting line with scroll-based animation */
+.connecting-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 6px; /* increased line width from 4px to 6px */
+    height: 100%;
+    background: #3e4a61;
+    transform: translateX(-50%);
+    border-radius: 3px; /* adjusted border radius for thicker line */
+    z-index: 1;
+}
+
+.connecting-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(180deg, #2696d5, #5b2ac6);
+    border-radius: 3px; /* adjusted border radius for thicker line */
+    box-shadow: 0 0 20px rgba(38, 150, 213, 0.6);
+    transition: height 0.3s ease;
+}
+
+/* Timeline dots that animate on scroll */
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #3e4a61;
+    border: 3px solid #3e4a61;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    transition: all 0.6s ease;
+}
+
+.timeline-dot.active {
+    background: #2696d5;
+    border-color: #2696d5;
+    box-shadow: 0 0 20px rgba(38, 150, 213, 0.8);
+    animation: timelinePulse 2s ease-in-out infinite;
+}
+
+@keyframes timelinePulse {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.2); }
+}
+
+/* Experience Item */
+.experience-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+    opacity: 0;
+    position: relative;
+    z-index: 2;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.experience-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.experience-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Experience Card */
+.experience-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    width: 45%;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Added glowing border effect to cards */
+.experience-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #2696d5, #5b2ac6);
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.experience-card.animate::after {
+    opacity: 0.3;
+}
+
+.experience-card:hover::after {
+    opacity: 0.6;
+    box-shadow: 0 0 30px rgba(38, 150, 213, 0.5);
+}
+
+.experience-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ff6b35;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+    animation: orangeGlow 3s ease-in-out infinite alternate;
+    text-align: left;
+}
+
+@keyframes orangeGlow {
+    0% { text-shadow: 0 0 10px rgba(255, 107, 53, 0.3); }
+    100% { text-shadow: 0 0 20px rgba(255, 107, 53, 0.6); }
+}
+
+.experience-meta {
+    font-size: 1rem;
+    color: #b0b0b0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.experience-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.experience-points {
+    list-style: none;
+    padding: 0;
+}
+
+.experience-points li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.experience-points li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #2696d5;
+    font-size: 1.2rem;
+}
+
+.key-projects {
+    margin-top: 20px;
+}
+
+.key-projects h4 {
+    color: #ff6b35;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* Certificate Image */
+.certificate-container {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.certificate-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.certificate-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Removed connection-point styles as they're replaced by timeline-dot */
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .main-title {
+        font-size: 2.5rem;
+        margin: 100px 0 60px 0;
+    }
+
+    .experience-item {
+        flex-direction: column !important;
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .experience-card,
+    .certificate-container {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .certificate-container {
+        margin-top: 30px;
+    }
+
+    .connecting-line {
+        display: none;
+    }
+
+    .timeline-dot {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2rem;
+        margin: 80px 0 40px 0;
+    }
+
+    .back-button {
+        width: 50px;
+        height: 50px;
+        top: 20px;
+        left: 20px;
+    }
+
+    .back-button i {
+        font-size: 20px;
+    }
+
+    .experience-card {
+        padding: 20px;
+    }
+
+    .experience-title {
+        font-size: 1.5rem;
+    }
+
+    .experience-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
+
+    .experience-container {
+        padding: 0 15px;
+    }
+
+    .experience-card {
+        padding: 15px;
+    }
+
+    .certificate-image {
+        max-width: 300px;
+    }
+}
+
+/* Loading Animation */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.loading-overlay.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top: 3px solid #2696d5;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.project-links a{
+    text-decoration: none;
+    color: #ff8b00;
+    transition: 0.3s ease-in-out;
+}
+.project-links a:hover{
+    text-shadow: 0 20 16px orangered;
+}
+
+
+
+
+/* custom scroll bar */
+
+/* Apply to entire page */
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1b1f2a;  /* Keep your existing track color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6a5acd;   /* Keep your existing thumb color */
+  border-radius: 10px;
+  border: 2px solid #1b1f2a;
+  box-shadow: 0 0 8px #6a5acd, 0 0 12px #6a5acd;  /* Neon glow */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7b68ee;   /* Slight hover change */
+  box-shadow: 0 0 10px #7b68ee, 0 0 16px #7b68ee;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #6a5acd #1b1f2a;
+}
+
+::selection{
+    color: #1b1f2a;
+    background-color:  #6a5acd;
+}
