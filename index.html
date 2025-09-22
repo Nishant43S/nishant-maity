@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishant</title>
+    <!-- website icon -->
+     <!-- logo -->
+    <link rel="icon" href="assets/logo.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="assets/logo.ico" sizes="16x16" type="image/x-icon">
+    
+    <!-- logo -->
+    <link rel="icon" href="assets/logo.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="32x32" type="image/x-icon">
+
+    <!-- logo -->
+    <link rel="icon" href="assets/logo.png" sizes="64x64" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="64x64" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="128x128" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="128x128" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="70x70" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="70x70" type="image/x-icon">
+
+    <link rel="icon" href="" sizes="150x150" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="150x150" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="310x310" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="310x310" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="192x192" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="512x512" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="512x512" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="180x180" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="180x180" type="image/x-icon">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <!-- Mouse Tail Canvas -->
+    <canvas id="mouse-tail"></canvas>
+
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="cursive-animation">
+            <svg viewBox="0 0 1200 200" preserveAspectRatio="xMidYMid meet">
+                <text id="cursive-text" x="50%" y="60%" dominant-baseline="middle" text-anchor="middle">Nishant</text>
+            </svg>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="progress-text" id="progressText">Loading... 0%</div>
+    </div>
+
+
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">PROJECTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+
+            <div class="video-bg">
+                <video autoplay muted loop playsinline>
+                    <source src="assets\background.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="container">
+                <h1 class="hero-title">
+                    Hi I am <span class="nishant-text" id="nishantText">Nishant</span>
+                </h1>
+                <div class="typewriter-container">
+                    <h2 class="typewriter" id="typewriter"></h2>
+                </div>
+                <p class="hero-description">
+                    I'm Nishant Maity, a skilled Python programmer specializing in generative AI. 
+                    I'm excited about learning new technologies and aiming to become an 
+                    expert in this ever-changing field.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-custom" id="myWorkBtn">ㅤMy Work ㅤ</a>
+                    <a href="assets/nishantCV.pdf" target="_blank" class="btn btn-custom" id="">Download CV</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <!-- Left Side - Profile Image -->
+                <div class="col-lg-5 col-md-12">
+                    <div class="profile-container">
+                        <div class="floating-particle"></div>
+                        <div class="floating-particle"></div>
+                        <div class="floating-particle"></div>
+                        <div class="floating-particle"></div>
+                        <div class="floating-particle"></div>
+                        <div class="floating-particle"></div>
+                        <div class="floating-particle"></div>
+                        <div class="floating-particle"></div>
+                        
+                        <div class="profile-image">
+                            <img src="assets\profile.png" alt="Profile Picture">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Content -->
+                <div class="col-lg-7 col-md-12">
+                    <div class="content-section">
+                        <h1 class="about-title">About Me</h1>
+                        
+                        <div class="bio-text">
+                            <p>I'm Nishant Maity, a Generative AI Developer with over 3 years of hands-on Python experience. I have built 20+ projects spanning web development, web applications, and desktop applications, along with strong expertise in data science and machine learning.</p>
+                            
+                            <p>Skilled in Prompt Engineering I specialize in designing effective prompts to optimize AI outputs and build intelligent solutions. Passionate about innovation, I continuously explore and learn new technologies to improve my skills, enhance my projects, and create impactful, AI-driven applications.</p>
+                        </div>
+                        
+                        <h3 class="skill-set-title">Skill Set</h3>
+
+
+
+                         <!-- #############  skills ################ -->
+
+                          <div class="skill-section">
+                            <div class="skills-grid">
+                                <div class="skill-card">
+                                <img src="assets/skills/genai.png" alt="Gen AI">
+                                <p>Gen AI</p>
+                                </div>
+                                <div class="skill-card">
+                                <img src="assets\skills\webdev.png" alt="Web Dev">
+                                <p>Web Dev</p>
+                                </div>
+                                <div class="skill-card">
+                                <img src="assets\skills\promptengineering.png" alt="Prompt Engineering">
+                                <p>PE</p>
+                                </div>
+                                <div class="skill-card">
+                                <img src="assets\skills\langchain.png" alt="LangChain">
+                                <p>LangChain</p>
+                                </div>
+                                <div class="skill-card">
+                                <img src="assets\skills\python.png" alt="Python">
+                                <p>Python</p>
+                                </div>
+                                <div class="skill-card">
+                                <img src="assets\skills\tensorflow.png" alt="Tensorflow">
+                                <p>Tensorflow</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <br>
+                        <div class="action-buttons">
+                            <a href="experience.html" class="action-btn exp-btn">Experience</a>
+                            <a href="achievements.html" class="action-btn">Achievements</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+      
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title">Tech Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="assets\projects\filelinkgen.png" alt="File Link Generator" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">File Link Generator</h3>
+                            <p class="project-description">
+                                A Flask app with Dropbox and Firebase Auth for secure file 
+                                uploads, shareable links, and QR codes. Features a responsive 
+                                Bootstrap 5 UI with instant link and copy support.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://file-link-generator-major-project.onrender.com/" target="_blank" class="project-link">Try App</a>
+                                <a href="https://github.com/Nishant43S/file-link-Generator.git"  target="_blank" class="project-link">Github</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="assets\projects\genaisummarizer.png" alt="Gen AI Q&A" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Gen AI que/ans & summarizer</h3>
+                            <p class="project-description">
+                                A Streamlit app to scrape website content in Simple or Advanced 
+                                modes with custom options. Supports downloads as .DOC or full 
+                                HTML, with a responsive UI for all devices.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://nishant43s-que-ans-summarizer-app.hf.space/" target="_blank" class="project-link">Try App</a>
+                                <a href="https://github.com/Nishant43S/Gen-Ai-Summarizer-Question-Answering-App" target="_blank" class="project-link">Github</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="assets\projects\webscraper.png" alt="Web Data Scraper" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Web Data Scraper</h3>
+                            <p class="project-description">
+                                A Streamlit Web Scraper App to extract website content in Simple 
+                                or Advanced modes. It's fully responsive and works seamlessly 
+                                across all devices.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://web-data-scraper-nishant-maity.streamlit.app/" target="_blank" class="project-link">Try App</a>
+                                <a href="https://github.com/Nishant43S/Web-Data-Scraper" target="_blank" class="project-link">Github</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="assets\projects\edareport.png" alt="EDA Report Generator" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">EDA Report Generator</h3>
+                            <p class="project-description">
+                                A Streamlit-based EDA app to generate and download detailed 
+                                reports from any CSV file. It features a responsive UI for seamless 
+                                use across all devices.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://nishant43s-datascience-app.hf.space/" target="_blank" class="project-link">Try App</a>
+                                <a href="https://github.com/Nishant43S/EDA-app" target="_blank" class="project-link">Github</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="assets\projects\indexgenerator.png" alt="index page generator" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Index Page Generator</h3>
+                            <p class="project-description">
+                                The Index Page Generator lets you quickly create professional index tables with customizable rows, columns, and alignment settings. Generate clean, printable index pages with ease and flexibility.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://index-page-generator.vercel.app/" target="_blank" class="project-link">Try App</a>
+                                <a href="https://github.com/Nishant43S/Index-page-generator" target="_blank" class="project-link">Github</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="assets\projects\passwordmanager.png" alt="password manager" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Password Manager</h3>
+                            <p class="project-description">
+                                The Secqure Password Manager securely stores and manages all your passwords in one place.It offers easy access, strong protection, and seamless management of your credentials.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://password-manager-r7dm.onrender.com/" target="_blank" class="project-link">Try App</a>
+                                <a href="https://github.com/Nishant43S/password-manager-app" target="_blank" class="project-link">Github</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            
+        <div class="stars" id="stars"></div>
+        
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12 d-flex justify-content-center justify-content-lg-start">
+                    <div class="form-container">
+                      
+                        <!-- form -->
+
+                        <div class="contact-form">
+                            <h2>Get In Touch</h2>
+                            <form >
+                            <div class="form-group">
+                                <input type="text" id="name" required>
+                                <label for="name">Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" required>
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" required>
+                                <label for="subject">Subject</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" rows="5"  required></textarea>
+                                <label for="message">Message</label>
+                            </div>
+                            <button type="button" onclick="sendMail()" class="btn btn-send">SEND</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-12 d-flex align-items-center justify-content-center">
+                    <div class="social-section">
+                        <h2>Stay Connected!</h2>
+                        <p>Follow me on my social media platforms to stay updated with my latest projects, insights, and innovations in AI, machine learning, and technology</p>
+                        
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/nishant-maity/" target="_blank" class="social-media-icon" >
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/Nishant43S/" target="_blank" title="GitHub" class="social-media-icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.instagram.com/nishant43s/" target="_blank" class="social-media-icon" >
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/6232051204" target="_blank" class="social-media-icon" >
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- custom alert -->
+        
+    <!-- Alert box structure -->
+    <div class="alert-overlay" id="customAlert">
+        <div class="alert-box" id="alertBox">
+        <p id="alertMessage">Message</p>
+        <button onclick="closeAlert()">OK</button>
+        </div>
+    </div>
+
+
+    <!-- email js -->
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+            publicKey: "bhuFExTIsO9K6xGMp",
+            });
+        })();
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/script.js">
+        
+    </script>
+
+    <script src="js\animationloder.js"></script>
+
+    <script src="js/contact.js"></script>
+</body>
+</html>

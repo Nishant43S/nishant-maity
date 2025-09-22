@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+        <!-- website icon -->
+     <!-- logo -->
+    <link rel="icon" href="assets/logo.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="assets/logo.ico" sizes="16x16" type="image/x-icon">
+    
+    <!-- logo -->
+    <link rel="icon" href="assets/logo.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="32x32" type="image/x-icon">
+
+    <!-- logo -->
+    <link rel="icon" href="assets/logo.png" sizes="64x64" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="64x64" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="128x128" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="128x128" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="70x70" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="70x70" type="image/x-icon">
+
+    <link rel="icon" href="" sizes="150x150" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="150x150" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="310x310" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="310x310" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="192x192" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="512x512" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="512x512" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="180x180" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="180x180" type="image/x-icon">
+   
+    <!-- external css -->
+     <link rel="stylesheet" href="css/achievements.css">
+     <link rel="stylesheet" href="css/mousetail.css">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+    </div>
+
+
+    <!-- Back Button -->
+    <div class="back-button" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <h1 class="main-title">Achievements</h1>
+        
+        <div class="experience-container">
+            <!-- Enhanced connecting line with scroll animation -->
+            <div class="connecting-line" id="connectingLine"></div>
+
+            <!-- Experience Item 1 -->
+            <div class="experience-item" data-index="0">
+                <!-- Added timeline dot instead of connection point -->
+                <div class="timeline-dot" style="top: 50px;"></div>
+                <div class="experience-card">
+                    <h3 class="experience-title">Top 10 , OU Project Expo</h3>
+                    <p class="experience-meta">April - 2025</p>
+                    <div class="experience-description">
+                      
+                        <p>Built a Streamlit-based summarizer & question/answering app that extracts content from websites, txt files, pdf and generates concise summaries & question/answering . Designed a responsive UI for seamless use on both desktop and mobile. </p>
+                        <div class="key-projects">
+                            <h4>Prject</h4>
+                            <ul class="experience-points">
+                                <li>Developed a Streamlit summarizer app for website content.</li>
+                                <li>Extracted text, links, and tables to generate concise summaries and question answering.</li>
+                                <li>Enabled export of summaries in docx.</li>
+                                <li>Designed a fully responsive UI for desktop & mobile.</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://nishant43s-que-ans-summarizer-app.hf.space/" target="_blank" style="margin-right: 16px;">Try App</a>
+                            <a href="https://github.com/Nishant43S/Gen-Ai-Summarizer-Question-Answering-App" target="_blank">Github</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-container">
+                    <a href="https://nishant43s-que-ans-summarizer-app.hf.space/" target="_blank" style="text-decoration: none; color: black;">
+                        <img src="assets\achievements\a2.png" alt="project" class="certificate-image">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Experience Item 2 -->
+            <div class="experience-item" data-index="1">
+                <div class="timeline-dot" style="top: 50px;"></div>
+                <div class="experience-card">
+                    <h3 class="experience-title">Semi-Finalist – VIT Bangalore Hackathon</h3>
+                    <p class="experience-meta">March - 2025</p>
+                    <div class="experience-description">
+                        <p>A Generative AI Summarizer app built with Streamlit that provides efficient text, website, and PDF summarization.</p>
+                        <p>It leverages Hugging Face and LangChain with advanced models for accurate, customizable summaries. Fully responsive across devices, the app ensures smooth user experience with model selection.</p>
+                        <ul class="experience-points">
+                            <li>Three summarization modes: Text, Website, and PDF, making it versatile for different needs.</li>
+                            <li>Uses Hugging Face models (Google-Pegasus, Facebook-BART, T5-Base) with custom selection option.</li>
+                            <li>Developed with Python, Streamlit, and LangChain for seamless performance and usability.</li>
+                            <li>Responsive design ensures accessibility on desktop, tablet, and mobile devices.</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://nishant43s-genai-summarizer.hf.space/" target="_blank" style="margin-right: 16px;">Try App</a>
+                            <a href="https://github.com/Nishant43S/Generative-Ai-Summarizer.git" target="_blank">Github</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-container">
+                    <a href="https://nishant43s-genai-summarizer.hf.space/" target="_blank" style="text-decoration: none; color: black;">
+                        <img src="assets\achievements\geaaisummarizer.png" alt="Generative AI Job Simulation Certificate" class="certificate-image">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Experience Item 3 -->
+            <div class="experience-item" data-index="2">
+                <div class="timeline-dot" style="top: 50px;"></div>
+                <div class="experience-card">
+                    <h3 class="experience-title">3rd Prize, Ou Project Expo</h3>
+                    <p class="experience-meta">November - 2023</p>
+                    <div class="experience-description">
+                        <p>Developed a Tkinter-based desktop automation app with utilities like Python module downloader, auto-typing/macro bot, and phone number validator.</p>
+                        <ul class="experience-points">
+                            <li>Built a Tkinter desktop app combining automation and utility tools.</li>
+                            <li>Integrated Python module downloader with virtual environment support.</li>
+                            <li>Implemented auto-typing/macro bot for repetitive UI tasks.</li>
+                            <li>Added phone number validation and carrier info lookup.</li>
+                            <li>Designed task scheduler with logging and safe execution controls.</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/Nishant43S/automation-app.git" target="_blank">Github</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-container">
+                    <a href="https://github.com/Nishant43S/automation-app.git" target="_blank" style="text-decoration: none; color: black;">
+                        <img src="assets\achievements\a1.png" alt="Data Science Job Simulation Certificate" class="certificate-image">
+                    </a>
+                </div>
+            </div>
+
+            
+            <!-- Added final timeline dot for last card -->
+            <div class="timeline-dot" style="top: calc(100% - 20px);"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- external js -->
+    <script src="js\achievement.js"></script>
+
+    <script src="js\mousetail.js"></script>
+</body>
+</html>

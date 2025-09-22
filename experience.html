@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Experience</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+        <!-- website icon -->
+     <!-- logo -->
+    <link rel="icon" href="assets/logo.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="assets/logo.ico" sizes="16x16" type="image/x-icon">
+    
+    <!-- logo -->
+    <link rel="icon" href="assets/logo.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="32x32" type="image/x-icon">
+
+    <!-- logo -->
+    <link rel="icon" href="assets/logo.png" sizes="64x64" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="64x64" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="128x128" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="128x128" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="70x70" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="70x70" type="image/x-icon">
+
+    <link rel="icon" href="" sizes="150x150" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="150x150" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="310x310" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="310x310" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="192x192" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="512x512" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="512x512" type="image/x-icon">
+
+    <link rel="icon" href="assets/logo.png" sizes="180x180" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.ico') }}" sizes="180x180" type="image/x-icon">
+    
+    <!-- external css -->
+     <link rel="stylesheet" href="css/experience.css">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Removed mouse tail element -->
+
+    <!-- Back Button -->
+    <div class="back-button" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <h1 class="main-title">Work Experiance</h1>
+        
+        <div class="experience-container">
+            <!-- Enhanced connecting line with scroll animation -->
+            <div class="connecting-line" id="connectingLine"></div>
+
+            <!-- Experience Item 1 -->
+            <div class="experience-item" data-index="0">
+                <!-- Added timeline dot instead of connection point -->
+                <div class="timeline-dot" style="top: 50px;"></div>
+                <div class="experience-card">
+                    <h3 class="experience-title">Data Science Intern</h3>
+                    <p class="experience-meta">Unified Mentor • Remote • Feb 2025 – Mar 2025 (2 months)</p>
+                    <div class="experience-description">
+                        <ul class="experience-points">
+                            <li>Performed data analysis, EDA, and built machine learning models using Python, Pandas, NumPy, and Scikit-learn.</li>
+                            <li>Created automated EDA reports and developed predictive models to support business decisions.</li>
+                            <li>Optimized ML models and improved data visualization for effective communication of insights.</li>
+                        </ul>
+                        <div class="key-projects">
+                            <h4>Key Prjects</h4>
+                            <ul class="experience-points">
+                                <li>Laptop Price Prediction: ML model using XGBoost & Random Forest; deployed with Streamlit.</li>
+                                <li>OCD Patient Analysis: EDA + ML for health data insights; evaluated with accuracy, skewness, kurtosis.</li>
+                                <li>Netflix Data Analysis: Explored trends in content using Pandas, Matplotlib, Seaborn.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-container">
+                    <img src="assets/experiance/c1.png" alt="Data Science Intern Certificate" class="certificate-image">
+                </div>
+            </div>
+
+            <!-- Experience Item 2 -->
+            <div class="experience-item" data-index="1">
+                <div class="timeline-dot" style="top: 50px;"></div>
+                <div class="experience-card">
+                    <h3 class="experience-title">Generative Ai Job Simulation</h3>
+                    <p class="experience-meta">BCGX • Remote • August 2024 (5 Days)</p>
+                    <div class="experience-description">
+                        <p>Worked on developing an AI-powered financial chatbot during a job simulation with BCG's GenAI Consulting team, gaining hands-on experience in Python, data analysis, and NLP in a real-world context.</p>
+                        <ul class="experience-points">
+                            <li>Practiced Python with libraries like pandas for data manipulation and analysis.</li>
+                            <li>Utilized Excel and Python to process financial datasets.</li>
+                            <li>Applied NLP techniques and rule-based logic on 10-K and 10-Q reports.</li>
+                            <li>Built a chatbot prototype providing user-friendly financial insights and analysis.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="certificate-container">
+                    <img src="assets/experiance/c2.png" alt="Generative AI Job Simulation Certificate" class="certificate-image">
+                </div>
+            </div>
+
+            <!-- Experience Item 3 -->
+            <div class="experience-item" data-index="2">
+                <div class="timeline-dot" style="top: 50px;"></div>
+                <div class="experience-card">
+                    <h3 class="experience-title">Data Science Job Simulation</h3>
+                    <p class="experience-meta">BCGX • Remote • August 2024 (11 days)</p>
+                    <div class="experience-description">
+                        <p>Worked on a customer churn analysis simulation with XYZ Analytics, applying Python-based data science techniques and delivering an executive summary to present actionable insights.</p>
+                        <ul class="experience-points">
+                            <li>Analyzed client data using Python, Pandas, and NumPy with visualizations for trends.</li>
+                            <li>Built and optimized a Random Forest model with 85% accuracy in churn prediction.</li>
+                            <li>Delivered an executive summary with actionable insights for leadership decisions.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="certificate-container">
+                    <img src="assets/experiance/c3.png" alt="Data Science Job Simulation Certificate" class="certificate-image">
+                </div>
+            </div>
+
+            <!-- Experience Item 4 -->
+            <div class="experience-item" data-index="3">
+                <div class="timeline-dot" style="top: 50px;"></div>
+                <div class="experience-card">
+                    <h3 class="experience-title">Data Analysis job Simulation</h3>
+                    <p class="experience-meta">Accenture • Remote • August 2024 (3 days)</p>
+                    <div class="experience-description">
+                        <p>Completed a data analysis simulation with Accenture, advising a hypothetical social media client through data-driven insights and presentations.</p>
+                        <ul class="experience-points">
+                            <li>Cleaned, modeled, and analyzed 7 datasets to identify content trends for strategic decisions.</li>
+                            <li>Created a PowerPoint deck and video presentation to communicate insights to stakeholders.</li>
+                            <li>Gained hands-on experience in data analysis, storytelling, and client-focused presentations.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="certificate-container">
+                    <img src="assets/experiance/c4.png" alt="Data Analysis Job Simulation Certificate" class="certificate-image">
+                </div>
+            </div>
+            
+            <!-- Added final timeline dot for last card -->
+            <div class="timeline-dot" style="top: calc(100% - 20px);"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- external js -->
+    <script src="js/experience.js"> 
+
+    </script>
+</body>
+</html>
